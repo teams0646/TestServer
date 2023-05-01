@@ -1,0 +1,14 @@
+C:\Users\Kirill Fishchuk\source\repos\TestServer\obj\Debug\TestServer.csproj.AssemblyReference.cache
+C:\Users\Kirill Fishchuk\source\repos\TestServer\obj\Debug\TestServer.csproj.SuggestedBindingRedirects.cache
+C:\Users\Kirill Fishchuk\source\repos\TestServer\obj\Debug\TestServer.Properties.Resources.resources
+C:\Users\Kirill Fishchuk\source\repos\TestServer\obj\Debug\TestServer.csproj.GenerateResource.cache
+C:\Users\Kirill Fishchuk\source\repos\TestServer\obj\Debug\TestServer.csproj.CoreCompileInputs.cache
+C:\Users\Kirill Fishchuk\source\repos\TestServer\bin\Debug\TestServer.exe.config
+C:\Users\Kirill Fishchuk\source\repos\TestServer\bin\Debug\TestServer.exe
+C:\Users\Kirill Fishchuk\source\repos\TestServer\bin\Debug\TestServer.pdb
+C:\Users\Kirill Fishchuk\source\repos\TestServer\obj\Debug\TestServer.exe
+C:\Users\Kirill Fishchuk\source\repos\TestServer\obj\Debug\TestServer.pdb
+C:\Users\Kirill Fishchuk\source\repos\TestServer\obj\Debug\TestServer.LoginForm.resources
+C:\Users\Kirill Fishchuk\source\repos\TestServer\obj\Debug\TestServer.MainWindowForm.resources
+C:\Users\Kirill Fishchuk\source\repos\TestServer\obj\Debug\TestServer.CreateGroupForm.resources
+C:\Users\Kirill Fishchuk\source\repos\TestServer\obj\Debug\TestServer.CreateUserForm.resources
