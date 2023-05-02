@@ -14,7 +14,13 @@ namespace TestServer
     public partial class LoginForm : Form
     {
 
+        public static bool getLoginStatus() {
+            
+            return true;
+            //return loginSuccessful;
+        }
 
+        public static bool loginSuccessful = false;
         string connectionString = buildConnectionString();
 
         private static string buildConnectionString()
@@ -42,11 +48,12 @@ namespace TestServer
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
             // Check if the user entered a valid username and password
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             //bool loginSuccessful = ValidateUser(username, password);
-            bool loginSuccessful = false;
+            loginSuccessful = false;
             if (username == "root" && password == "rootroot")
             {
                 loginSuccessful = true;
@@ -57,9 +64,8 @@ namespace TestServer
                 MessageBox.Show("Success!");
                 this.Hide(); // Hide the login form
                 // Instantiate and initialize the main window form
-                //MainWindowForm mainWindowForm = new MainWindowForm();
                 // Show the main window form
-                //mainWindowForm.Show();
+                
             }
             else
             {

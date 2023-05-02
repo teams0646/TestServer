@@ -49,8 +49,16 @@ namespace TestServer
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.cmbUsers = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupTests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvGroupTests
+            // 
+            this.dgvGroupTests.Location = new System.Drawing.Point(0, 0);
+            this.dgvGroupTests.Name = "dgvGroupTests";
+            this.dgvGroupTests.Size = new System.Drawing.Size(240, 150);
+            this.dgvGroupTests.TabIndex = 0;
             // 
             // dgvUsers
             // 
@@ -62,9 +70,9 @@ namespace TestServer
             // clientsListBox
             // 
             this.clientsListBox.FormattingEnabled = true;
-            this.clientsListBox.Location = new System.Drawing.Point(0, 0);
+            this.clientsListBox.Location = new System.Drawing.Point(0, 234);
             this.clientsListBox.Name = "clientsListBox";
-            this.clientsListBox.Size = new System.Drawing.Size(291, 446);
+            this.clientsListBox.Size = new System.Drawing.Size(696, 212);
             this.clientsListBox.TabIndex = 0;
             // 
             // lblGroupTestName
@@ -157,7 +165,7 @@ namespace TestServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(764, 761);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbUsers);
             this.Controls.Add(this.label3);
@@ -171,7 +179,10 @@ namespace TestServer
             this.Controls.Add(this.lblGroupTestName);
             this.Controls.Add(this.clientsListBox);
             this.Name = "MainWindowForm";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Admin panel";
+            this.Load += new System.EventHandler(this.MainWindowForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupTests)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

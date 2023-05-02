@@ -15,16 +15,13 @@ namespace TestServer
         static void Main()
         {
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new LoginForm());
+            Application.Run(new MainWindowForm());
 
-            LoginForm loginForm = new LoginForm();
-            loginForm.ShowDialog();
-
-           // MainWindowForm mainForm = new MainWindowForm();
-            //mainForm.ShowDialog();
 
         }
+
+        
     }
 
 }

@@ -13,13 +13,100 @@ using TestServer.Data;
 using TestServer.Networking;
 using TestServer.Networking.TestServer;
 
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using TestServer.Data;
+using TestServer.Networking;
+using TestServer.Networking.TestServer;
+
 namespace TestServer
 {
     public partial class MainWindowForm : Form
     {
         private readonly Server server;
-        private Dictionary<string, Client> clients = assignClients();
 
+        public MainWindowForm()
+        {
+            InitializeComponent();
+            fillContents();
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+
+            
+
+            if (!LoginForm.getLoginStatus())
+            {
+                MessageBox.Show("Login is required to use admin panel");
+            }
+            //server = new Server(8080);
+            //server.Start();
+        }
+
+        private void MainWindowForm_Load(object sender, EventArgs e)
+        {
+            Task.Delay(30000);
+        }
+
+        private void fillContents()
+        {
+            // Populate dgvGroupTests with default data
+            DataTable dtGroupTests = new DataTable();
+            dtGroupTests.Columns.Add("TestName", typeof(string));
+            dtGroupTests.Columns.Add("GroupName", typeof(string));
+            dtGroupTests.Rows.Add("Test 1", "Group A");
+            dtGroupTests.Rows.Add("Test 2", "Group B");
+            dtGroupTests.Rows.Add("Test 3", "Group C");
+            dgvGroupTests.DataSource = dtGroupTests;
+
+            // Populate dgvUsers with default data
+            DataTable dtUsers = new DataTable();
+            dtUsers.Columns.Add("Name", typeof(string));
+            dtUsers.Columns.Add("Email", typeof(string));
+            dtUsers.Rows.Add("John Smith", "john.smith@example.com");
+            dtUsers.Rows.Add("Jane Doe", "jane.doe@example.com");
+            dtUsers.Rows.Add("Bob Johnson", "bob.johnson@example.com");
+            dgvUsers.DataSource = dtUsers;
+
+            // Populate clientsListBox with default data
+            clientsListBox.Items.Add("Client 1");
+            clientsListBox.Items.Add("Client 2");
+            clientsListBox.Items.Add("Client 3");
+
+            // Set default values for other controls
+            lblGroupTestName.Text = "Test Name";
+            lblGroupTestGroup.Text = "Group Name";
+            lstGroups.Items.Add("Group A");
+            lstGroups.Items.Add("Group B");
+            lstGroups.Items.Add("Group C");
+            
+            
+            label3.Text = "Some label";
+            lblGroupTestsEmpty.Text = "No tests found.";
+            cmbUsers.Items.Add("John Smith");
+            cmbUsers.Items.Add("Jane Doe");
+            cmbUsers.Items.Add("Bob Johnson");
+        }
+    }
+}
+
+
+/*
+namespace TestServer
+{
+    public partial class MainWindowForm : Form
+    {
+        private readonly Server server;
+        //private Dictionary<string, Client> clients = assignClients();
+        
         private static Dictionary<string, Client> assignClients(){
             Dictionary<string, Client> generatedClients = new Dictionary<string, Client>
             {
@@ -29,19 +116,28 @@ namespace TestServer
             return generatedClients;
         }
 
-#pragma warning disable CS0169 // The field 'MainWindowForm.db' is never used
         private Database db;
-#pragma warning restore CS0169 // The field 'MainWindowForm.db' is never used
         string connectionString = "Data Source=myServerAddress;Initial Catalog=myDataBase;User Id=myUsername;Password=myPassword;";
-
+        
         public MainWindowForm()
         {
             InitializeComponent();
-
-            server = new Server(8080);
-            server.Start();
+            if (!LoginForm.getLoginStatus()) {
+                MessageBox.Show("Login is required to use admin panel");
+            }
+            //server = new Server(8080);
+            //server.Start();
         }
 
+        private void MainWindowForm_Load(object sender, EventArgs e)
+        {
+            // Add a pause of 5 seconds before closing the form
+            System.Threading.Thread.Sleep(5000);
+            //this.Close();
+        }
+
+
+        
         private void OnClientConnected(object sender, ClientEventArgs e)
         {
             // Отримати ім'я клієнта
@@ -556,7 +652,8 @@ namespace TestServer
             
             e.Cancel = false;
         }
-
         
+
     }
-    }
+} 
+*/
