@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 219);
+            this.ClientSize = new System.Drawing.Size(184, 211);
             this.Controls.Add(this.btnCreateUser);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -107,6 +107,8 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtName);
+            this.MaximumSize = new System.Drawing.Size(200, 250);
+            this.MinimumSize = new System.Drawing.Size(200, 250);
             this.Name = "CreateUserForm";
             this.Text = "Form1";
             this.ResumeLayout(false);

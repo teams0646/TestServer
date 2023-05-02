@@ -95,6 +95,18 @@ namespace TestServer
             cmbUsers.Items.Add("Jane Doe");
             cmbUsers.Items.Add("Bob Johnson");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CreateUserForm form1 = new CreateUserForm();
+            form1.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CreateGroupForm form2 = new CreateGroupForm();
+            form2.Show();
+        }
     }
 }
 
